@@ -21,8 +21,13 @@ li{
     border: solid 1px #cad3c855;
     padding: .5rem;
 }
+li:hover{
+    background: #8395a7;
+}
 img{
-    float:right;
+    position: relative;
+    left: 25px;
+
 }
 #input{
     font-size: 16px;
@@ -35,7 +40,12 @@ img{
 }
 .pp{
     font-weight: 500;
-    font-size: 24px;
+    font-size: 22px;
+}
+.ppp{
+    
+    font-weight: 500;
+    font-size: 26px;
 }
 
 #day-five{
@@ -53,4 +63,24 @@ div.card-body.five{
     margin-top: 30px;
     margin-left:6px;
     background-color: #2e86de6c;
+}
+
+div.container.card{
+    padding-left: 0;
+    padding-right: 0;
+}
+.green{
+    background-color: #1dd1a1;
+}
+.yellow{
+    background-color: #feed57;
+}
+.orange{
+    background-color: #ff9f43;
+}
+.red{
+    background-color: #fa3e3ee1;
+}
+.cc{
+    color: indigo;
 }
