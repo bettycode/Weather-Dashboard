@@ -108,10 +108,14 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (weatherResponse) {
       $("#day-five").empty();
+      $("#5title").empty();
 
       console.log(weatherResponse);
 
       console.log(queryURL);
+      var day5 = $("<h4>").text("5-Day Forecast:");
+      $("#5title").append(day5);
+
 
       for (var i = 0; i < weatherResponse.list.length; i += 8) {
         var cardDiv = $("<div class=' card-deck'>");
@@ -161,7 +165,8 @@ $(document).ready(function () {
   //event listener for search button
   $("#button").on("click", function (e) {
     e.preventDefault();
-
+   // e.stopPropagation();
+    
     var input = $("#input").val();
 
     //storing the input/cities
@@ -171,12 +176,13 @@ $(document).ready(function () {
     list.push(input);
     localStorage.setItem("city", JSON.stringify(list));
 
+    renderCity();
     getWeatherOne();
-    // renderCity()
+     //renderCity()
   });
 // get the stored inputs/cities and also creat li 
   function renderCity() {
-  
+    $("#city-li").empty();
     if (localStorage.getItem("city") !== null) {
       list = JSON.parse(localStorage.getItem("city"));
     }
@@ -194,4 +200,8 @@ $(document).ready(function () {
     getWeatherOne();
   }
   renderCity();
+
+
+
+
 });
