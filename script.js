@@ -6,14 +6,14 @@ $(document).ready(function () {
   var hour = moment().hours();
 
 // this gets the weather and the uv 
-  function getWeatherOne() {
+  function getWeatherOne(data) {
 
     var apiKey = "a6eb63a8f46454e34332e9c93150ac61";
     var input = $("#input").val();
     $("#input").val("");
     var queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
-      input +
+      data +
       "&appid=" +
       apiKey;
 
@@ -30,7 +30,7 @@ $(document).ready(function () {
 
       var pinput = $("<p>")
         .addClass("ppp")
-        .text(input + " " + "(" + moment().format("L") + ")");
+        .text(data + " " + "(" + moment().format("L") + ")");
       $("#city-view").append(pinput);
 
       var image = $("<img>").attr(
@@ -99,7 +99,7 @@ $(document).ready(function () {
     //five day forecast
     var weatherURL =
       "https://api.openweathermap.org/data/2.5/forecast?q=" +
-      input +
+      data +
       "&appid=" +
       apiKey;
 
@@ -158,6 +158,7 @@ $(document).ready(function () {
 //event listener for clear button
   clear.on("click", function () {
     window.location.reload(true);
+    
     window.localStorage.clear();
     cityLi.empty();
   });
@@ -168,7 +169,7 @@ $(document).ready(function () {
    // e.stopPropagation();
     
     var input = $("#input").val();
-
+   
     //storing the input/cities
     if (localStorage.getItem("city") !== null) {
       list = JSON.parse(localStorage.getItem("city"));
@@ -176,9 +177,9 @@ $(document).ready(function () {
     list.push(input);
     localStorage.setItem("city", JSON.stringify(list));
 
-    renderCity();
-    getWeatherOne();
-     //renderCity()
+    //renderCity();
+    getWeatherOne(input);
+     renderCity();
   });
 // get the stored inputs/cities and also creat li 
   function renderCity() {
@@ -191,17 +192,25 @@ $(document).ready(function () {
       var one = list[i];
     
       var li = $("<li>").text(one);
-      li.addClass("container");
+      li.addClass("container oneli");
       li.attr("data-one", one);
       li.attr("id", "oneli");
       $("#city-li").prepend(li);
     }
 
-    getWeatherOne();
+    getWeatherOne(one);
   }
   renderCity();
 
+$(".oneli").on("click",function(e){
 
+  console.log("clicked");
+  var a = $(e.currentTarget).attr("data-one");
+  console.log(a.typeof);
+  getWeatherOne(a);
+ 
+});
 
+ 
 
 });
