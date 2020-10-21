@@ -21,7 +21,7 @@ When viewing future weather conditions for that city, you are presented with a 5
 * When you want to clear the search history, There is a clear button that will remove all the history from the local storage.
 
 Demo:-
-![Weather-Dashboard](demo.gif)
+![Weather-Dashboard](demo1.gif)
 
 
 ### Evert thing used in this project:-
