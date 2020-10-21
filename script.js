@@ -74,6 +74,7 @@ $(document).ready(function () {
         url: uvURL,
         method: "GET",
       }).then(function (uvResponse) {
+        
         console.log(uvResponse[0].value);
         console.log(uvURL);
         var tfour = $("<span>").text(uvResponse[0].value);
@@ -83,6 +84,7 @@ $(document).ready(function () {
         var tfive = $("<p>").text("UV Index : ");
         tfive.append(tfour);
         $("#city-view").append(tfive);
+       
         
         if (uvResponse[0].value > 0 && uvResponse[0].value <= 2) {
           tfour.attr("class", "green");
@@ -166,6 +168,7 @@ $(document).ready(function () {
   //event listener for search button
   $("#button").on("click", function (e) {
     e.preventDefault();
+    window.location.reload(true);
    // e.stopPropagation();
     
     var input = $("#input").val();
