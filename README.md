@@ -2,7 +2,7 @@
 
 In this project, a client want to see the weather outlook for multiple cities to be able to plan a trip accordingly.
 
-### What to Expect:-
+## What to Expect:-
 
 Given is weather Dashboard with form inputs.
 
@@ -20,11 +20,16 @@ When viewing future weather conditions for that city, you are presented with a 5
 
 * When you want to clear the search history, There is a clear button that will remove all the history from the local storage.
 
-Demo:-
+## Demo:-
+
+
 ![Weather-Dashboard](demo1.gif)
 
+## Live link to deployed app:-
+( https://bettycode.github.io/Weather-Dashboard/)
 
-### Evert thing used in this project:-
+
+## Evert thing used in this project:-
 
 * HTML
 * CSS
