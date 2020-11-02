@@ -1,4 +1,4 @@
-### Weather-Dashboard
+## Weather-Dashboard
 
 In this project, a client want to see the weather outlook for multiple cities to be able to plan a trip accordingly.
 
